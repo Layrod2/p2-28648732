@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Curriculum Vitae</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--OpenGraph-->
+  <meta property="og:title" content="Curriculum Vitae"/>
+  <meta property="og:type" content="profile" />
+  <meta property="og:url" content="https://p2-28648732.herokuapp.com/"/>
+  <!-------->
+	<link rel="stylesheet" type="text/css" href="cv.css">
+	<link href="https://fonts.googleapis.com/css2?family=Libre+Bodoni:ital@1&family=Playfair+Display:ital@1&family=Plus+Jakarta+Sans:wght@200&family=Roboto+Slab:wght@300&family=Water+Brush&display=swap" rel="stylesheet">
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=<%= GOOGLE_ANALYTICS%>"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', '<%= GOOGLE_ANALYTICS%>');
+</script>
+</head>
+<body>
+	<div class="contenido">	
+		<div class="nombre-foto">
+	<img src="images/foto.png">
+    <h1>Rossana Rodriguez</h1>
+    </div>
+    <div class="todosdatos">
+    <div class="datos">
+      <h3> Datos generales </h3>
+      <p>
+      	<b>Nombres:</b> Rossana Saharay De los Angeles
+      	<br>
+      	<b>Apellidos:</b> Rodriguez Laya
+      	<br>
+        <b>Fecha de Nacimiento:</b> 19/01/2002
+        <br>
+        <b>Cédula de identidad:</b> 28.648.732 
+        <br>
+        <b>Lugar de Residencia:</b> Sector Aníbal Pérez Ortiz Estado Guárico
+    	<br>
+    	<b>Teléfono:</b> (0424).891.2235
+    	<br>
+        <b>Correo electrónico:</b> rossana19rl@gmail.com
+      </p>
+      <br>
+      <h3>Formación Académica</h3>
+      <p>
+        <b>Primaria:</b> U.E.N "DR Jose Guzmán Bastardo" 2008-2011, E.B"José Antonio Anzoátegui" 2011-2014
+        <br>
+        <b>Bachillerato:</b> U.E.N"Bicentenario 5 De Julio De 1811"2014-2017, U.E.N "Mireya De Jesús Gómez De Mata" 2017-2019
+         <br>
+        <b>Cursando 4to Semestre Ingeniería en informática:</b> Universidad Nacional Experimental "Rómulo Gallegos"2019-Actualidad
+      </p>
+  </div>
+
+  <hr>
+
+    <div class="experiencia">
+      <h3>Experiencias Laborales</h3>
+      <p>
+        <b>Cajera:</b> Inversiones SAAP, Paletería,C.A 03/01/2019-20/04/2020
+        <br>
+        <b>Asistente Administrativo:</b> Empresa Socialista de Riego Rio Tiznados, S.A 25/04/19-Actualidad
+      </p>
+      <br>
+      <h3>Cursos realizados</h3>
+      <p>
+        Curso de Epilación,Depilación, Visagismo de cejas y colocación de pestañas punto a punto 02/10/2020
+      </p>
+    </div>
+</div>
+</div>
+<br><br><br>
+<div class="contacto">
+	<h3>Formulario de Contacto</h3>
+	<form method='post'action='/' class="botones">
+		         <div class="botones1">
+		         		 <input class="boton" name='email' type="email" placeholder="Ingrese su Email" value="<%= ct.email%>" required="true">
+                    <input class="boton" name='nombre' type="text"  placeholder="Ingrese su Nombre" value="<%= ct.nombre%>" required="true">
+                    <input class="boton"  name='comentario' type="text" placeholder="Comentario" value="<%= ct.comentario%>" required="true">
+                    <input type="hidden" value="<%= ct.ip%>"/>
+                    <input type="hidden"  value="<%= ct.fecha%>">
+                    <input type="hidden"  value="<%= ct.pais%>">
+                    <div class="g-recaptcha" data-sitekey= "<%= GOOGLE_RECAPTCHA%>"></div>
+		         	<input type="submit" class="form__input" value="Enviar">
+		         </div>
+             <h3><a href="/contactos">Visualizar Contactos</a></h3>
+	  </form>
+</div>
+
+
+</body>
+</html>
